@@ -5,27 +5,31 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
-// c.fillRect(100, 300, 100, 100);
-// c.fillRect(200, 200, 100, 100);
-// c.fillRect(100, 500, 100, 100);                  
-// c.fillRect(200, 400, 100, 100);
-
 var un = 100;
 var start_x = 4*un;
 var start_y = 0;
 
 c.strokeRect(un+start_x,un+start_y,8*un,8*un);
 
-for (var i=1; i<9 ; i+=1) {
-    for (var j=1; j<8 ; j+=2) {
+for (var i=1*un ; i<9*un ; i+=un) {
+    for (var j=1*un ; j<8*un ; j+=2*un) {
 
-        if (i%2==0)
-            j++;
-
-        c.fillRect((i*un)+start_x,(j*un)+start_y,un,un);
+        if (i%(2*un) == 0){
+            j+=un;
+        }
+            
         
-        if (i%2 == 0) 
-            j--;
+        c.fillRect(i+start_x,j+start_y,un,un);
+ 
+
+        // c.beginPath();
+        // c.arc(((i)*un)+start_x+(un/2),((j+1)*un)+start_y+(un/2),un/2,0,2*Math.PI,true);
+        // c.stroke();
+        // c.strokeStyle = "#fa2ag6";
+        
+        if (i%(2*un) == 0) {
+            j-=un;
+        }
 
     }
 }
