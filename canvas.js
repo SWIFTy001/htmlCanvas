@@ -7,6 +7,9 @@ var c = canvas.getContext('2d');
 
 
 
+
+
+
 var un = 100;
 var start_x = 4*un;
 var start_y = 0;
@@ -31,6 +34,33 @@ for (var i=1*un ; i<9*un ; i+=un) {
     }
 }
 
+
+for (var i=0 ; i<100 ; i++) {
+
+var x = Math.random() * window.innerWidth;
+
+var y = Math.random() * window.innerHeight;
+
+c.beginPath();
+c.arc(x, y, 50, 0, Math.PI * 2, false);
+c.strokeStyle.innerWidth = 10;
+
+
+var hex = Math.floor((Math.random() * 0xffffff)).toString(16);
+var color = '#' + hex.padStart(6,'0');
+
+
+
+c.strokeStyle = color ;
+c.stroke();
+
+}
+
+
+
+// c.beginPath();
+// c.arc(x, y, 50, 0, Math.PI * 2, false);
+// c.strokeStyle.innerWidth = 10;
 
 
 console.log(canvas);
